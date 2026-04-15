@@ -1,0 +1,52 @@
+{
+  "name": "Paperclip",
+  "slug": "paperclip",
+  "categories": [
+    20
+  ],
+  "date_created": "2026-04-15",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 3100,
+  "documentation": "https://docs.paperclip.ing/",
+  "website": "https://paperclip.ing/",
+  "logo": "https://github.com/paperclipai.png",
+  "description": "Paperclip is an open-source orchestration platform for managing autonomous AI agent teams with goals, routines, governance, and a browser-based control plane.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/paperclip.sh",
+      "config_path": "/opt/paperclip/.env",
+      "resources": {
+        "cpu": 4,
+        "ram": 8192,
+        "hdd": 20,
+        "os": "Debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "Open the web interface and register the first user after installation. Paperclip is configured in authenticated private mode for LAN access.",
+      "type": "info"
+    },
+    {
+      "text": "Persistent Paperclip runtime data is stored in `/opt/paperclip-data`, while the application code lives in `/opt/paperclip`.",
+      "type": "info"
+    },
+    {
+      "text": "Update `PAPERCLIP_PUBLIC_URL` in `/opt/paperclip/.env` if you later place Paperclip behind a reverse proxy or custom hostname.",
+      "type": "info"
+    },
+    {
+      "text": "Install provider-specific local agent CLIs such as Codex or Claude Code separately if you want Paperclip to execute those local adapters inside the container.",
+      "type": "warning"
+    }
+  ]
+}
